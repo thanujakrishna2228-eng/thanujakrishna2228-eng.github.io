@@ -5,141 +5,174 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thanuja Krishnamoorthy — Aspiring Python Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream: #FBF7F1;
+    --bg: #F3F0F9;
     --card: #FFFFFF;
-    --sage: #7E9C86;
-    --sage-soft: #E5EEE4;
-    --coral: #E38B6F;
-    --coral-soft: #FBE6DD;
-    --ink: #3A342E;
-    --muted: #857A6E;
-    --line: #EAE1D3;
-    --display: 'Fraunces', Georgia, serif;
-    --sans: 'Nunito Sans', -apple-system, sans-serif;
-    --mono: 'Space Mono', monospace;
+    --plum: #453A6B;
+    --plum-deep: #2E2650;
+    --plum-soft: #E7E1F5;
+    --gold: #CE9A52;
+    --gold-soft: #F6ECDA;
+    --ink: #2B2540;
+    --muted: #6F6688;
+    --line: #DCD4EE;
+    --display: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', -apple-system, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
   }
 
   *{ box-sizing: border-box; margin:0; padding:0; }
   html{ scroll-behavior: smooth; }
 
   body{
-    background: var(--cream);
+    background: var(--bg);
     color: var(--ink);
     font-family: var(--sans);
     line-height: 1.65;
   }
-  a{ color: inherit; }
-  :focus-visible{ outline: 2px solid var(--coral); outline-offset: 3px; }
+  a{ color: inherit; text-decoration: none; }
+  :focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
 
-  .wrap{ max-width: 1040px; margin: 0 auto; padding: 0 32px; }
+  .wrap{ max-width: 1080px; margin: 0 auto; padding: 0 32px; }
 
-  header{ padding: 26px 0; }
+  header{ padding: 28px 0; }
   .header-inner{ display: flex; justify-content: space-between; align-items: center; }
-  .logo{ font-family: var(--display); font-weight: 600; font-size: 20px; color: var(--ink); }
-  nav ul{ list-style: none; display: flex; gap: 26px; }
-  nav a{ text-decoration: none; font-size: 14px; font-weight: 700; color: var(--muted); }
-  nav a:hover{ color: var(--coral); }
+  .logo{ font-family: var(--display); font-weight: 700; font-size: 20px; color: var(--plum-deep); display:flex; align-items:center; gap:10px; }
+  .logo::before{ content:''; width:8px; height:22px; background: var(--gold); border-radius:2px; display:inline-block; }
+  nav ul{ list-style: none; display: flex; gap: 8px; }
+  nav a{ font-size: 13.5px; font-weight: 700; color: var(--muted); padding:9px 16px; border-radius: 999px; transition: background .15s, color .15s; }
+  nav a:hover{ color: var(--plum-deep); background: var(--plum-soft); }
 
-  .hero{ padding: 60px 0 90px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+  .hero{ padding: 56px 0 96px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
   .hero .eyebrow{
-    font-family: var(--mono); font-size: 13px; color: var(--sage); background: var(--sage-soft);
-    display: inline-block; padding: 6px 14px; border-radius: 999px; margin-bottom: 22px;
+    font-family: var(--mono); font-size: 12.5px; color: var(--plum);
+    background: var(--gold-soft); border: 1px solid var(--gold);
+    display: inline-block; padding: 7px 16px; border-radius: 999px; margin-bottom: 24px;
   }
-  .hero h1{ font-family: var(--display); font-size: clamp(34px, 4.8vw, 50px); font-weight: 600; line-height: 1.15; color: var(--ink); }
-  .hero h1 .accent{ color: var(--coral); font-style: italic; }
-  .hero p.lede{ margin-top: 22px; font-size: 17px; color: var(--muted); max-width: 50ch; }
+  .hero h1{ font-family: var(--display); font-size: clamp(34px, 4.6vw, 48px); font-weight: 700; line-height: 1.2; color: var(--plum-deep); }
+  .hero h1 .accent{ color: var(--gold); font-style: italic; }
+  .hero p.lede{ margin-top: 22px; font-size: 16.5px; color: var(--muted); max-width: 50ch; }
   .hero .actions{ margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn{ display: inline-block; padding: 14px 28px; text-decoration: none; font-size: 14px; font-weight: 700; border-radius: 999px; }
-  .btn.primary{ background: var(--ink); color: var(--cream); }
-  .btn.primary:hover{ background: #52493E; }
-  .btn.secondary{ border: 2px solid var(--line); color: var(--ink); }
-  .btn.secondary:hover{ border-color: var(--coral); }
+  .btn{ display: inline-block; padding: 14px 28px; font-size: 14px; font-weight: 700; border-radius: 10px; }
+  .btn.primary{ background: var(--plum-deep); color: #fff; }
+  .btn.primary:hover{ background: var(--plum); }
+  .btn.secondary{ border: 2px solid var(--line); color: var(--plum-deep); }
+  .btn.secondary:hover{ border-color: var(--gold); }
 
-  .hero-portrait{ position: relative; display: flex; align-items: center; justify-content: center; }
-  .blob{
-    width: 300px; height: 300px;
-    border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%;
-    background: linear-gradient(150deg, var(--coral-soft), var(--sage-soft));
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
+  .contact-strip{ display: flex; flex-wrap: wrap; gap: 18px; margin-top: 28px; font-size: 13.5px; color: var(--muted); }
+  .contact-strip a{ border-bottom: 1px dashed var(--line); }
+  .contact-strip a:hover{ color: var(--gold); border-color: var(--gold); }
+
+  .hero-portrait{ display: flex; align-items: center; justify-content: center; }
+  .portrait-frame{
+    position: relative;
+    width: 280px; height: 340px;
+    padding: 14px;
+    background: var(--card);
+    border-radius: 18px;
+    box-shadow: 0 20px 40px -18px rgba(46,38,80,0.35);
   }
-  .blob .initials{ font-family: var(--display); font-size: 68px; font-weight: 700; color: var(--ink); }
-  .blob .profile-img{ width: 100%; height: 100%; object-fit: cover; }
-  .blob::after{
-    content: ""; position: absolute; top: -14px; right: 10px;
-    width: 36px; height: 36px; background: var(--coral); border-radius: 50%; opacity: 0.85;
+  .portrait-frame::before{
+    content:''; position:absolute; inset:-8px;
+    border: 2px solid var(--gold);
+    border-radius: 22px;
+    z-index:0;
+  }
+  .portrait-inner{
+    position: relative; z-index: 1;
+    width: 100%; height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--plum-soft), var(--gold-soft));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .portrait-inner img{
+    width: 100%; height: 100%; object-fit: cover; display:block;
+  }
+  .portrait-fallback{
+    font-family: var(--display); font-size: 56px; font-weight: 700; color: var(--plum-deep);
+    display:none;
+  }
+  .portrait-tag{
+    position:absolute; bottom:-14px; left:50%; transform:translateX(-50%);
+    background: var(--plum-deep); color:#fff; font-family: var(--mono);
+    font-size:11px; padding:6px 16px; border-radius:999px; white-space:nowrap;
+    box-shadow: 0 8px 18px -6px rgba(0,0,0,0.4);
   }
 
-  .contact-strip{ display: flex; flex-wrap: wrap; gap: 18px; margin-top: 26px; font-size: 13.5px; color: var(--muted); }
-  .contact-strip a{ text-decoration: none; color: var(--muted); border-bottom: 1px dashed var(--line); }
-  .contact-strip a:hover{ color: var(--coral); border-color: var(--coral); }
+  section{ padding: 68px 0; }
+  .section-head{ margin-bottom: 38px; display:flex; align-items:baseline; gap:14px; }
+  .section-head .num{ font-family: var(--mono); font-size: 13px; color: var(--gold); font-weight:600; }
+  .section-head h2{ font-family: var(--display); font-size: 27px; color: var(--plum-deep); }
 
-  section{ padding: 66px 0; }
-  .section-head{ margin-bottom: 36px; }
-  .section-head .eyebrow-sm{
-    font-family: var(--mono); font-size: 12px; color: var(--sage);
-    text-transform: uppercase; letter-spacing: 1px;
+  .timeline{ display: flex; flex-direction: column; gap: 16px; }
+  .timeline-item{
+    display:grid; grid-template-columns: 64px 1fr; gap: 20px;
+    background: var(--card); border-radius: 16px; padding: 24px 26px;
+    box-shadow: 0 4px 16px rgba(46,38,80,0.05);
+    border-left: 4px solid var(--gold);
   }
-  .section-head h2{ font-family: var(--display); font-size: 28px; color: var(--ink); margin-top: 8px; }
-
-  .timeline{ position: relative; padding-left: 32px; border-left: 2px solid var(--line); }
-  .timeline-item{ position: relative; padding-bottom: 36px; }
-  .timeline-item:last-child{ padding-bottom: 0; }
-  .timeline-item::before{
-    content: ""; position: absolute; left: -39px; top: 4px;
-    width: 14px; height: 14px; border-radius: 50%;
-    background: var(--coral); border: 3px solid var(--cream);
+  .timeline-item .step{
+    font-family: var(--display); font-size: 26px; font-weight:700; color: var(--plum-soft);
+    -webkit-text-stroke: 1px var(--plum);
+    display:flex; align-items:flex-start; justify-content:center;
   }
-  .timeline-item .when{ font-family: var(--mono); font-size: 12.5px; color: var(--sage); }
-  .timeline-item h3{ font-family: var(--display); font-size: 19px; margin-top: 6px; color: var(--ink); }
-  .timeline-item .org{ font-size: 14px; color: var(--muted); font-weight: 700; margin-top: 2px; }
-  .timeline-item p{ margin-top: 8px; font-size: 14.5px; color: var(--muted); max-width: 58ch; }
+  .timeline-item .when{ font-family: var(--mono); font-size: 12px; color: var(--gold); }
+  .timeline-item h3{ font-family: var(--display); font-size: 18.5px; margin-top: 5px; color: var(--plum-deep); }
+  .timeline-item .org{ font-size: 13.5px; color: var(--muted); font-weight: 700; margin-top: 2px; }
   .timeline-item ul{ margin-top: 10px; padding-left: 18px; }
-  .timeline-item li{ font-size: 14.5px; color: var(--muted); margin-top: 4px; }
+  .timeline-item li, .timeline-item p{ font-size: 14px; color: var(--muted); margin-top: 5px; max-width: 60ch; }
 
-  .project-card{ background: var(--card); border-radius: 20px; padding: 30px; box-shadow: 0 4px 18px rgba(58,52,46,0.06); }
-  .project-card h3{ font-family: var(--display); font-size: 21px; color: var(--ink); }
+  .project-card{
+    background: var(--card); border-radius: 18px; padding: 32px;
+    box-shadow: 0 6px 22px rgba(46,38,80,0.07);
+    border-top: 4px solid var(--plum);
+  }
+  .project-card h3{ font-family: var(--display); font-size: 20px; color: var(--plum-deep); }
   .project-card ul{ margin-top: 14px; padding-left: 18px; }
   .project-card li{ font-size: 14.5px; color: var(--muted); margin-top: 6px; }
-  .project-card .tags{ display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  .project-card .tags{ display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
   .project-card .tags span{
-    font-family: var(--mono); font-size: 11px; padding: 4px 10px; border-radius: 999px;
-    background: var(--sage-soft); color: var(--sage);
+    font-family: var(--mono); font-size: 11px; padding: 5px 12px; border-radius: 999px;
+    background: var(--gold-soft); color: var(--gold); border:1px solid var(--gold);
   }
 
-  .skills-wrap{ display: flex; flex-wrap: wrap; gap: 12px; }
+  .skills-wrap{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .skill-pill{
-    font-family: var(--sans); font-weight: 700; font-size: 14px; padding: 10px 20px;
-    border-radius: 999px; background: var(--card); border: 2px solid var(--line); color: var(--ink);
+    font-weight: 700; font-size: 14px; padding: 14px 18px;
+    border-radius: 12px; background: var(--card); border: 1px solid var(--line); color: var(--plum-deep);
+    display:flex; align-items:center; gap:10px;
   }
+  .skill-pill::before{ content:''; width:8px; height:8px; border-radius:50%; background: var(--gold); flex-shrink:0; }
 
-  .info-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-  .info-card{ background: var(--card); border-radius: 20px; padding: 26px 28px; box-shadow: 0 4px 18px rgba(58,52,46,0.05); }
-  .info-card h3{ font-family: var(--display); font-size: 18px; color: var(--ink); margin-bottom: 12px; }
+  .info-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .info-card{ background: var(--card); border-radius: 16px; padding: 26px 28px; border-bottom: 4px solid var(--gold); box-shadow: 0 4px 16px rgba(46,38,80,0.05); }
+  .info-card h3{ font-family: var(--display); font-size: 17px; color: var(--plum-deep); margin-bottom: 12px; }
   .info-card ul{ padding-left: 18px; }
-  .info-card li{ font-size: 14.5px; color: var(--muted); margin-top: 6px; }
+  .info-card li{ font-size: 14px; color: var(--muted); margin-top: 6px; }
 
-  footer{ background: var(--ink); color: var(--cream); border-radius: 28px; margin: 0 16px 40px; padding: 56px 44px; text-align: center; }
-  footer h2{ font-family: var(--display); font-size: 30px; font-weight: 600; }
-  footer p{ margin-top: 14px; color: #C9BFAF; max-width: 48ch; margin-left: auto; margin-right: auto; }
-  .contact-links{ margin-top: 30px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  footer{ background: var(--plum-deep); color: #F3F0F9; border-radius: 24px; margin: 0 16px 40px; padding: 56px 44px; text-align: center; }
+  footer h2{ font-family: var(--display); font-size: 30px; font-weight: 700; }
+  footer p{ margin-top: 14px; color: #C6BEE0; max-width: 48ch; margin-left: auto; margin-right: auto; }
+  .contact-links{ margin-top: 30px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .contact-links a{
-    text-decoration: none; font-size: 14px; font-weight: 700; color: var(--ink);
-    background: var(--coral-soft); padding: 12px 24px; border-radius: 999px;
+    font-size: 14px; font-weight: 700; color: var(--plum-deep);
+    background: var(--gold); padding: 12px 24px; border-radius: 10px;
   }
-  .contact-links a:hover{ background: var(--coral); color: var(--cream); }
-  .fine-print{ margin-top: 36px; font-family: var(--mono); font-size: 11.5px; color: #6F675C; }
+  .contact-links a:hover{ background: #E0B36F; }
+  .fine-print{ margin-top: 36px; font-family: var(--mono); font-size: 11px; color: #8C82AC; }
 
   @media (max-width: 760px){
     .hero{ grid-template-columns: 1fr; }
     .hero-portrait{ order: -1; }
-    .blob{ width: 200px; height: 200px; }
-    .blob .initials{ font-size: 44px; }
-    nav ul{ gap: 14px; }
-    .info-grid{ grid-template-columns: 1fr; }
+    .portrait-frame{ width: 220px; height: 260px; }
+    nav ul{ flex-wrap: wrap; gap: 6px; }
+    .info-grid, .skills-wrap{ grid-template-columns: 1fr; }
+    .timeline-item{ grid-template-columns: 1fr; }
+    .timeline-item .step{ display:none; }
     footer{ margin: 0 8px 32px; padding: 44px 24px; }
   }
 
@@ -174,7 +207,7 @@
         <a href="#contact" class="btn secondary">Get in touch</a>
       </div>
       <div class="contact-strip">
-        <span>📍 Namakkal, Tamil Nadu</span>
+        <span>📍 Erumapatti, Namakkal, Tamil Nadu</span>
         <span>📞 +91 8072215904</span>
         <a href="mailto:thanujakrishna2228@gmail.com">thanujakrishna2228@gmail.com</a>
         <a href="https://github.com/thanujakrishna2228-eng" target="_blank" rel="noopener">GitHub</a>
@@ -182,53 +215,69 @@
       </div>
     </div>
     <div class="hero-portrait">
-      <div class="blob"><img src="picture.jpg" alt="Thanuja Krishnamoorthy" class="profile-img"></div>
+      <div class="portrait-frame">
+        <div class="portrait-inner">
+          <img src="picture.jpg" alt="Thanuja Krishnamoorthy"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="portrait-fallback" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">TK</div>
+        </div>
+        <span class="portrait-tag">aspiring python dev</span>
+      </div>
     </div>
   </section>
 
   <section id="education">
     <div class="section-head">
-      <span class="eyebrow-sm">Academic background</span>
+      <span class="num">01</span>
       <h2>Education</h2>
     </div>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="when">2024 — 2026</div>
-        <h3>M.Sc Computer Science</h3>
-        <div class="org">Arignar Anna Government Arts College, Namakkal, Tamil Nadu</div>
-        <p>CGPA: 7.9 / 10</p>
+        <div class="step">01</div>
+        <div>
+          <div class="when">2024 — 2026</div>
+          <h3>M.Sc Computer Science</h3>
+          <div class="org">Arignar Anna Government Arts College, Namakkal, Tamil Nadu</div>
+          <p>CGPA: 7.9 / 10</p>
+        </div>
       </div>
       <div class="timeline-item">
-        <div class="when">2021 — 2024</div>
-        <h3>B.Sc Computer Science</h3>
-        <div class="org">Arignar Anna Government Arts College, Namakkal, Tamil Nadu</div>
-        <p>CGPA: 7.6 / 10</p>
+        <div class="step">02</div>
+        <div>
+          <div class="when">2021 — 2024</div>
+          <h3>B.Sc Computer Science</h3>
+          <div class="org">Arignar Anna Government Arts College, Namakkal, Tamil Nadu</div>
+          <p>CGPA: 7.6 / 10</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="experience">
     <div class="section-head">
-      <span class="eyebrow-sm">Hands-on experience</span>
+      <span class="num">02</span>
       <h2>Internship</h2>
     </div>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="when">May 2025 — June 2025</div>
-        <h3>Data Mining Intern</h3>
-        <div class="org">Shantee Technologies</div>
-        <ul>
-          <li>Collected, cleaned, and organized data using Microsoft Excel to support data mining activities.</li>
-          <li>Analyzed datasets using Excel features such as sorting, filtering, formulas, and charts to generate reports.</li>
-          <li>Collaborated with team members to validate data and ensure accurate, high-quality project outcomes.</li>
-        </ul>
+        <div class="step">•</div>
+        <div>
+          <div class="when">May 2025 — June 2025</div>
+          <h3>Data Mining Intern</h3>
+          <div class="org">Shantee Technologies</div>
+          <ul>
+            <li>Collected, cleaned, and organized data using Microsoft Excel to support data mining activities.</li>
+            <li>Analyzed datasets using Excel features such as sorting, filtering, formulas, and charts to generate reports.</li>
+            <li>Collaborated with team members to validate data and ensure accurate, high-quality project outcomes.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="project">
     <div class="section-head">
-      <span class="eyebrow-sm">Academic project</span>
+      <span class="num">03</span>
       <h2>Featured work</h2>
     </div>
     <div class="project-card">
@@ -245,7 +294,7 @@
 
   <section id="skills">
     <div class="section-head">
-      <span class="eyebrow-sm">What I work with</span>
+      <span class="num">04</span>
       <h2>Technical Skills</h2>
     </div>
     <div class="skills-wrap">
@@ -260,7 +309,7 @@
 
   <section id="more">
     <div class="section-head">
-      <span class="eyebrow-sm">Beyond the classroom</span>
+      <span class="num">05</span>
       <h2>Certificates, achievements &amp; languages</h2>
     </div>
     <div class="info-grid">
